@@ -1,0 +1,12 @@
+# 1) Escaneo de secretos de lo que está en stage (reto 10.4).
+if command -v gitleaks >/dev/null 2>&1; then
+  gitleaks git --pre-commit --staged --redact --verbose || {
+    echo "gitleaks encontró un posible secreto. Sáquelo del commit y, si era real, rótelo." >&2
+    exit 1
+  }
+else
+  echo "AVISO: gitleaks no está instalado (ver ia/RETOS.md). La CI lo ejecuta igual." >&2
+fi
+
+# 2) Formatea y revisa solo lo modificado.
+npx --no-install lint-staged

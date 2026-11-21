@@ -1,0 +1,2 @@
+# Nada roto llega al remoto: typecheck + lint + format + test (+ cobertura) + test:hooks
+npm run check

@@ -1,0 +1,10 @@
+# Commits convencionales: tipo(alcance opcional): descripción
+primera_linea=$(head -n1 "$1")
+case "$primera_linea" in
+  Merge*|Revert*) exit 0 ;;
+esac
+if ! printf '%s' "$primera_linea" | grep -Eq '^(feat|fix|test|chore|docs|refactor|ci|build|perf|style)(\([a-z0-9-]+\))?!?: .{3,}$'; then
+  echo "Mensaje de commit no convencional: \"$primera_linea\"" >&2
+  echo "Use: feat: ..., fix: ..., test: ..., chore: ..., docs: ..., refactor: ..., ci: ..." >&2
+  exit 1
+fi

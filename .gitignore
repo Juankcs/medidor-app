@@ -1,0 +1,46 @@
+# dependencias
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# nativo generado (Continuous Native Generation)
+/ios
+/android
+.kotlin/
+*.orig.*
+
+# pruebas
+coverage/
+
+# secretos: nunca se versionan (env.example sí, con valores falsos)
+.env
+.env.*
+*.pem
+*.key
+*.p8
+*.p12
+*.jks
+*.keystore
+*.mobileprovision
+*firebase-adminsdk*.json
+google-services.json
+GoogleService-Info.plist
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# sistema
+.DS_Store
+*.tsbuildinfo
+
+# claude code: ajustes locales de cada persona
+.claude/settings.local.json
